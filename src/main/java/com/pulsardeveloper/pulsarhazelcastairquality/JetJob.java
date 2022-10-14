@@ -66,7 +66,7 @@ public class JetJob {
                 () -> PulsarClient.builder().serviceUrl("pulsar://pulsar1:6650").build(),
                 () -> Schema.JSON(Observation.class),
                 Message::getValue).build();
-        
+
         Pipeline p = Pipeline.create();
         p.readFrom(source)
                 .withNativeTimestamps(0)
